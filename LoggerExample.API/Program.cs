@@ -10,7 +10,6 @@ var logConfiguration = new LoggerConfiguration()
            .Enrich.FromLogContext()
            .WriteTo.Console(outputTemplate:
            "[{Timestamp:HH:mm:ss} {Level:u3}] {CorrelationId} {Message:lj}{NewLine}{Exception}")
-
            .CreateLogger();
 
 builder.Logging.ClearProviders();
