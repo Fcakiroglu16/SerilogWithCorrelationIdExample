@@ -5,12 +5,11 @@ using Serilog;
 using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
-
 var logConfiguration = new LoggerConfiguration()
            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
            .Enrich.FromLogContext()
            .WriteTo.Console(outputTemplate:
-           "[{Timestamp:HH:mm:ss} {Level:u3}] {CorrelationId}  {Message:lj}{NewLine}{Exception}")
+           "[{Timestamp:HH:mm:ss} {Level:u3}] {CorrelationId} {Message:lj}{NewLine}{Exception}")
 
            .CreateLogger();
 
